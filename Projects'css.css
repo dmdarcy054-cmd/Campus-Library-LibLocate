@@ -1,0 +1,306 @@
+/* General Reset & Font Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container holding all links */
+.linkcons {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+/* Styled Anchor Tag as a Box */
+.nav-box {
+  display: inline-block;
+  background-color: #223249;
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 1px solid #334155;
+  border-radius: 19px;
+  transition: all 0.2s ease;
+}
+
+.nav-box.active {
+  background-color: #00c3ff36;
+  color: #00014e;
+  font-weight: bold;
+}
+/* Hover state on the anchor box */
+.nav-box:hover {
+  background-color: #df9e2e;
+  border-color: #d97706;
+  color: #0f172a;
+}
+
+.nav-box1 {
+  display: inline-flex;
+  background-color: #ffae00;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 1px solid #555233;
+  border-radius: 15px;
+  transition: all 0.2s ease;
+}
+/* Hover state on the anchor box */
+.nav-box1:hover {
+  background-color: #050301;
+  border-color: #1d1001;
+  color: #eb7100;
+}
+
+
+body {
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+.Logo{
+  width: 25%;
+}
+.Logo, p{
+  text-align: center;
+  font-size: 19 px;
+}
+header {
+  background-image: linear-gradient(rgb(61, 67, 90),rgb(11, 11, 46));
+  color: white;
+  padding: 0.1px 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #ffae00;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration:none;
+}
+
+/* Main Layout & Sections */
+main {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/*Hero Container Centering*/
+.hero-section {
+  background-image: linear-gradient(160deg, rgb(65, 44, 21),rgb(22, 48, 87)), url('pexels-weirdfish-27296579.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  padding:  140px 20px 120px 20px;
+}
+
+.hero-section h1 {
+  font-size: 3.3rem;
+  font-weight: 800;
+  margin-bottom: 35px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #e8ebf0;
+  margin-bottom: 45px;
+}
+
+/*Glassmorphism Hero Search Bar*/
+.hero-search-box {
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(12px);
+  padding: 5px;
+  justify-content: flex-end;
+  border-radius: 45px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 10px;
+  max-width: 500;
+  width: 55%;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  width: 23%;
+  padding: 6.5px;
+  background-color: #1f1c1c00;
+  backdrop-filter: blur(14px);
+  color: #ec5600e5 ;
+  border-radius: 18px;
+  margin-bottom: 50px;
+  border:2px solid #ff66002c;
+}
+
+/* Search Controls */
+.searchar {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 17px;
+  justify-content:flex-end;
+  align-items: center;
+  margin-bottom: 4rem;
+  padding-left: 5px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #944802;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 550;
+}
+
+button:hover {
+  background-color: #0c0c11;
+  color: #e0e0e0;
+}
+
+
+/* Footer Styling */
+footer {
+  background-color: #2b2c5f;
+  text-align: center;
+  padding: 2rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.catalog-section {
+  width: 100%;
+  padding: 10px;
+  background-color: #141525;
+}
+
+/* Header Alignment*/
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+.catalog-header, p {
+  font-weight:90;
+}
+
+/*The grid layout creation*/
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+  gap: 60px;
+}
+
+/* Book card styling*/
+.book-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-badge{
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.category-badge {
+  color: #64748b;
+}
+.stock-badge {
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.book-card h3 {
+  font-size: 13px;
+  margin: 4px;
+  color: #0f172a;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  size: 12px;
+}
+.filters select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px, 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.filters option {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.more-info {
+  font-size: 12px;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.action-btn {
+  width: 100%;
+  background: #753908;
+  color: #070000;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.action-btn :hover {
+  background-color: rgb(25, 25, 39);
+  color: #dddddd;
+}

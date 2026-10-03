@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Library</title>
+  <link rel="stylesheet" href="Projects'css.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="Logo">
+    <h1 >CAMPUS LIBRARY</h1>
+    <p>LibLocate</p>
+    </div>
+    <nav>
+      <div class="linkcons">
+      <a href="#" class="nav-box active">Home</a>
+      <a href="#catalog" class="nav-box">Book Catalog</a>
+      <a href="#" class="nav-box">Sign In</a>
+      <a href="#" class="nav-box1">Create account</a>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main Search -->
+  <main>
+    <section class="hero-section">
+      <!-- Small Eyebrow Badge -->
+      <span class="badge">CAMPUS ACADEMY RESOURCE NETWORK</span>
+
+      <!-- Main Title -->
+      <h1>Find Any Book on Campus in Seconds</h1>
+
+      <!-- Subtitle explaining access -->
+      <p>Browse live shelf locations, availability, and course catalogs. Public access to all students.</p>
+
+      <!-- Search bar creation -->
+      <div class="hero-search-box">
+        <input type="text" placeholder="Search by book title, author or ISBN...">
+        <a href="#catalog"><button>Search Catalog</button></a>
+      </div>
+    </section>
+
+    <!-- Simple Book Catalog -->
+    <section id="catalog" class="catalog-section">
+      <!-- Header & Filter controls Bar -->
+      <div class="catalog-header">
+        <div>
+          <h2>Campus Catalog</h2>
+          <p>Browse books, shelf locations, and book availability.</p>
+        </div>
+        <div class="filters">
+          <select name="type">
+            <option value="all">All Items</option>
+            <option value="lang">Languages</option>
+            <option value="codn">Coding</option>
+            <option value="web">Web Designing</option>
+          </select>
+          <select name="subject">
+            <option value="all">All Subjects</option>
+            <option value="cn">Computer Networks</option>
+            <option value="js">Java Programming</option>
+            <option value="esp">English For General Purposes</option>
+            <option value="os">Operating Systems</option>
+            <option value="dbms">Database Management Ststems</option>
+            <option value="web">Web Development</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="books-grid">
+        <!--First book-->
+        <div class="book-card">
+          <div class="card-badge">
+            <span class="category-badge">COMPUTER SCIENCE</span>
+            <span class="stock-badge">In Stock</span>
+          </div>
+          <h3>Java Programming</h3>
+          
+          <div class="more-info">
+            <p> Floor1 (East)</p>
+            <p> Shelf 1A - Row4</p>
+          </div>
+
+          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+        </div>
+
+        <div class="book-card">
+          <div class="card-badge">
+            <span class="category-badge">COMPUTER SCIENCE</span>
+            <span class="stock-badge">In Stock</span>
+          </div>
+          <h3>Computer Networks</h3>
+          
+          <div class="more-info">
+            <p> Floor1 (East)</p>
+            <p> Shelf 2A - Row2</p>
+          </div>
+
+          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+        </div>
+
+        <div class="book-card">
+          <div class="card-badge">
+            <span class="category-badge">COMPUTER SCIENCE</span>
+            <span class="stock-badge">In Stock</span>
+          </div>
+          <h3>English For Specific Purposes</h3>
+          
+          <div class="more-info">
+            <p> Floor2 (West)</p>
+            <p> Shelf 1B - Row1</p>
+          </div>
+
+          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+        </div>
+
+        <div class="book-card">
+          <div class="card-badge">
+            <span class="category-badge">COMPUTER SCIENCE</span>
+            <span class="stock-badge">In Stock</span>
+          </div>
+          <h3>Database Management Systems</h3>
+          
+          <div class="more-info">
+            <p> Floor1 (East)</p>
+            <p> Shelf 3A - Row2</p>
+          </div>
+
+          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+        </div>
+
+        <div class="book-card">
+          <div class="card-badge">
+            <span class="category-badge">COMPUTER SCIENCE</span>
+            <span class="stock-badge">In Stock</span>
+          </div>
+          <h3>Web Development</h3>
+          
+          <div class="more-info">
+            <p> Floor1 (East)</p>
+            <p> Shelf 1B - Row3</p>
+          </div>
+
+          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+        </div>
+
+        <div class="book-card">
+          <div class="card-badge">
+            <span class="category-badge">COMPUTER SCIENCE</span>
+            <span class="stock-badge">In Stock</span>
+          </div>
+          <h3>Operating Systems</h3>
+          
+          <div class="more-info">
+            <p> Floor1 (West)</p>
+            <p> Shelf 2B - Row4</p>
+          </div>
+
+          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Campus Library</p>
+  </footer>
+
+  <!-- Connect JavaScript -->
+  <script src="Project's javasc.js"></script>
+</body>
+</html>
