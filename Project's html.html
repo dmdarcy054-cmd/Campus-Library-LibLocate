@@ -18,8 +18,8 @@
       <div class="linkcons">
       <a href="#" class="nav-box active">Home</a>
       <a href="#catalog" class="nav-box">Book Catalog</a>
-      <a href="#" class="nav-box">Sign In</a>
-      <a href="#" class="nav-box1">Create account</a>
+      <a href="#" class="nav-box" onclick="openBox(); setTab('login');">Sign In</a>
+      <a href="#" class="nav-box1" onclick="openBox(); setTab('signup');">Create account</a>
       </div>
     </nav>
   </header>
@@ -84,7 +84,7 @@
             <p> Shelf 1A - Row4</p>
           </div>
 
-          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
         </div>
 
         <div class="book-card">
@@ -99,7 +99,7 @@
             <p> Shelf 2A - Row2</p>
           </div>
 
-          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
         </div>
 
         <div class="book-card">
@@ -114,7 +114,7 @@
             <p> Shelf 1B - Row1</p>
           </div>
 
-          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
         </div>
 
         <div class="book-card">
@@ -129,7 +129,7 @@
             <p> Shelf 3A - Row2</p>
           </div>
 
-          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
         </div>
 
         <div class="book-card">
@@ -144,7 +144,7 @@
             <p> Shelf 1B - Row3</p>
           </div>
 
-          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
         </div>
 
         <div class="book-card">
@@ -159,12 +159,48 @@
             <p> Shelf 2B - Row4</p>
           </div>
 
-          <button class="action-btn"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- AUTHENTICATION POPUP MODAL -->
+  <div  id="popBox" class="pop-bg">
+    <div class="pop-card">
+      <button class="pop-close" onclick="closeBox()">&times;</button>
+
+      <div class="pop-icon"> &#128274;</div>
+      <h2 id="popTitle">Student Account Required</h2>
+      <p id="popText">Create a student account to reserve books.</p>
+
+      <!-- TAB SWITCHING BUTTONS -->
+      <div class="pop-tabs">
+        <button id="tab1" class="tab-btn" onclick="setTab('login')">Log In</button>
+        <button id="tab2" class="tab-btn active" onclick="setTab('signup')">Create Account</button>
+      </div>
+
+      <!-- FORM FIELDS -->
+      <form onsubmit="event.preventDefault();">
+        <div id="nameRow" class="field">
+          <label>FULL NAME</label>
+          <input type="text" placeholder="Enter full name">
+        </div>
+        
+        <div id="idRow" class="field">
+          <label>STUDENT ID NUMBER</label>
+          <input type="text" placeholder="Enter student ID">
+        </div>
+
+        <div class="field">
+          <label>UNIVERSITY EMAIL</label>
+          <input type="email" placeholder="student@university.ac.rw" required>
+        </div>
+
+        <button type="submit" id="mainBtn" class="pop-btn">Create Student Account</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
