@@ -16,10 +16,12 @@
     </div>
     <nav>
       <div class="linkcons">
-      <a href="#" class="nav-box active">Home</a>
-      <a href="#catalog" class="nav-box">Book Catalog</a>
-      <a href="#" class="nav-box" onclick="openBox(); setTab('login');">Sign In</a>
-      <a href="#" class="nav-box1" onclick="openBox(); setTab('signup');">Create account</a>
+        <a href="#" class="nav-box active">Home</a>
+        <a href="#catalog" class="nav-box">Book Catalog</a>
+        <a href="#" id="signInBtn" class="nav-box" onclick="openBox(); setTab('login');">Sign In</a>
+        <a href="#" id="createAccountBtn" class="nav-box1" onclick="openBox(); setTab('signup');">Create account</a>
+
+        <a href="#" id="userGreeting" class="nav-box1" style="display: none;" onclick="handleLogout(event)"></a>
       </div>
     </nav>
   </header>
@@ -38,8 +40,8 @@
 
       <!-- Search bar creation -->
       <div class="hero-search-box">
-        <input type="text" placeholder="Search by book title, author or ISBN...">
-        <a href="#catalog"><button>Search Catalog</button></a>
+        <input type="text" id="searchInput" placeholder="Search by book title, author or ISBN..." onkeyup="searchBooks()">
+        <a href="#catalog"><button onclick="searchBooks()">Search Catalog</button></a>
       </div>
     </section>
 
@@ -84,7 +86,7 @@
             <p> Shelf 1A - Row4</p>
           </div>
 
-          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="handleReserveClick(this);"> &#128274 Reserve</button>
         </div>
 
         <div class="book-card">
@@ -99,7 +101,7 @@
             <p> Shelf 2A - Row2</p>
           </div>
 
-          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="handleReserveClick(this);"> &#128274 Reserve</button>
         </div>
 
         <div class="book-card">
@@ -114,7 +116,7 @@
             <p> Shelf 1B - Row1</p>
           </div>
 
-          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="handleReserveClick(this);"> &#128274 Reserve</button>
         </div>
 
         <div class="book-card">
@@ -129,7 +131,7 @@
             <p> Shelf 3A - Row2</p>
           </div>
 
-          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="handleReserveClick(this);"> &#128274 Reserve</button>
         </div>
 
         <div class="book-card">
@@ -144,7 +146,7 @@
             <p> Shelf 1B - Row3</p>
           </div>
 
-          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="handleReserveClick(this);"> &#128274 Reserve</button>
         </div>
 
         <div class="book-card">
@@ -159,9 +161,10 @@
             <p> Shelf 2B - Row4</p>
           </div>
 
-          <button class="action-btn" onclick="openBox(); setTab('signup');"> &#128274 Reserve / Check Out</button>
+          <button class="action-btn" onclick="handleReserveClick(this);"> &#128274 Reserve</button>
         </div>
       </div>
+      <p id="noMatch" style="display: none;text-align: center;">No matching books found</p>
     </section>
   </main>
 
@@ -181,7 +184,7 @@
       </div>
 
       <!-- FORM FIELDS -->
-      <form onsubmit="event.preventDefault();">
+      <form onsubmit = "handleAuth(event);">
         <div id="nameRow" class="field">
           <label>FULL NAME</label>
           <input type="text" placeholder="Enter full name">
