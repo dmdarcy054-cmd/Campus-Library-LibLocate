@@ -11,6 +11,7 @@ html {
 body {
   color: #ffffff;
   line-height: 1.6;
+
 }
 
 
@@ -194,33 +195,15 @@ button:hover {
   font-weight:90;
 }
 
-.filters {
-  display: flex;
-  gap: 20px;
-  size: 12px;
-}
-.filters select {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 8px, 14px;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  outline: none;
-}
-
-.filters option {
-  background-color: #1e293b;
-  color: #ffffff;
-}
-
 
 /*The grid layout creation*/
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
   gap: 60px;
+  justify-content: start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Book card styling*/
@@ -232,6 +215,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 350px;
 }
 .book-card h3 {
   font-size: 13px;
@@ -281,7 +265,7 @@ button:hover {
 /*Dark overlay Background*/
 .pop-bg {
   display: none;/*Hidden by default*/
-  position: fixed;
+  position:fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -402,4 +386,107 @@ footer {
   padding: 2rem;
   color: #ffffff;
   font-size: 0.9rem;
+  position: relative;
+  clear: both;
+}
+
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+  }
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .Logo h1 {
+    font-size: 12px;
+    margin: 0;
+  }
+  .Logo p {
+    font-size: 9px;
+    margin: 0;
+  }
+  .linkcons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-left: auto;
+  }
+  .linkcons .nav-box {
+    font-size: 5px;
+    padding: 3px 3px;
+    white-space: nowrap;
+  }
+  .linkcons .nav-box1 {
+    font-size: 5px;
+    padding: 3px 3px;
+    white-space: nowrap;
+  }
+
+  .hero-section .badge {
+    font-size: 10px;
+    padding: 1px 7px;
+    width: 45%;
+  }
+
+  .hero-section h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  .hero-section p {
+    font-size: 12px;
+  }
+  .hero-search-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    width: 90%;
+    margin: 15 auto 0 auto;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 11px;
+    box-sizing: border-box;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .catalog-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    padding 0 15px;
+    box-sizing: border-box;
+    gap: 12px;
+  }
+  .catalog-header h2{
+    font-size: 20px;
+    margin: 0 0 4px 0;
+    text-align: left;
+  }
+  .catalog-header p {
+    font: 13px;
+    line-height: 1.4;
+    margin: 0;
+    color: #cbd5e1;
+    text-align: left;
+  }
 }

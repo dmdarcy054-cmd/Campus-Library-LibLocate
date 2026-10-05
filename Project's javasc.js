@@ -91,7 +91,10 @@ function handleReserveClick(buttonElement) {
 
 function searchBooks() {
   //accepting input from search bar
-  const text= document.getElementById("searchInput").value.toLowerCase();
+  const text = document.getElementById("searchInput").value.toLowerCase();
+  const selectedType = document.getElementById("typeFilter") ? document.getElementById("typeFilter").value.toLowerCase() : "all";
+  const selectedSubject = document.getElementById("subjectFilter").value.toLowerCase() ? document.getElementById("subjectFilter").value.toLowerCase() : "all";
+
   const book= document.querySelectorAll(".book-card");
   const noMatch= document.getElementById("noMatch");
   let foundMatch= false;
@@ -99,7 +102,16 @@ function searchBooks() {
   //Hide or show each book
   book.forEach(book => {
     const title = book.querySelector("h3").innerText.toLowerCase();
-    if (title.includes(text)){
+    const fullText = book.innerText.toLowerCase();
+    
+    // check search box matching
+    const matchText = title.includes(text) || fullText.includes(text);
+    
+    // check Type and subject dropdown matching 
+    const matchType = (selectedType === "all") || fullText.includes(selectedType);
+    const matchSubject = (selectedSubject === "all") || fullText.includes(selectedSubject);
+    
+    if (matchText && matchType && matchSubject){
     book.style.display = "";
     foundMatch = true;
     } else {
